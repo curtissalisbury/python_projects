@@ -1,2 +1,2 @@
 # python_projects
-Little projects from books I am going through
+Working through "Python Programming for the Absolute Beginner, Third Edition" as well as CheckiO projects

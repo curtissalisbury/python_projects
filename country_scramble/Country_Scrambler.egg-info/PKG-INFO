@@ -1,0 +1,21 @@
+Metadata-Version: 1.2
+Name: Country-Scrambler
+Version: 0.0.1
+Summary: Country Scrambler
+Home-page: UNKNOWN
+Author: Curtis Salisbury
+Author-email: curtis.salisbury@gmail.com
+License: UNKNOWN
+Description: ### Country Scrambler
+        
+        ## Instructions:
+        
+        Follow the instructions below to run country scrambler:
+        
+        1. ```pip install .```
+        1. prior to commit ```black .```
+        1. ```pytest -v --html=assurity_tests_report.html```
+        1. Move back to New Zealand
+        
+Platform: UNKNOWN
+Requires-Python: >=3.7.*
