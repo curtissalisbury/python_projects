@@ -1,6 +1,9 @@
-"""Find all word pair palingrams in a dictionary file"""
+"""Find all word pair palingrams in a dictionary file
+    Checking with time to see duration of program run"""
+import time
 import load_dictionary
 
+start_time = time.time()
 word_list = load_dictionary.load('words.txt')
 
 
@@ -29,4 +32,7 @@ palingrams_sorted = sorted(palingrams)
 print(f'\nNumber of palingrams = {len(palingrams_sorted)}')
 for first, second in palingrams_sorted:
     print(f'{first} {second}')
+
+end_time = time.time()
+print(f'Runtime for this program was {end_time - start_time} seconds')
 

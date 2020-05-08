@@ -22,7 +22,8 @@ class FormulaTests(unittest.TestCase):
         with self.assertRaises(Exception) as context:
             for item in cube_volume_test_values:
                 formulas.cube_volume(side=item)
-                self.assertTrue('Side length must be greater than 0' in str(context.exception))
+                self.assertTrue('Side length must be greater than 0'
+                                in str(context.exception))
 
     def test_sphere_volume(self):
         sphere_volume_test_values = [
@@ -40,7 +41,8 @@ class FormulaTests(unittest.TestCase):
         with self.assertRaises(Exception) as context:
             for item in sphere_volume_test_values:
                 formulas.sphere_volume(radius=item)
-                self.assertTrue('Radius must be greater than 0' in str(context.exception))
+                self.assertTrue('Radius must be greater than 0'
+                                in str(context.exception))
 
     def test_right_square_pyramid_volume(self):
         right_sq_pyramid_volume_test_values = [
@@ -48,7 +50,8 @@ class FormulaTests(unittest.TestCase):
             {'base_edge': 3.5, 'height': 5.5, 'expected_value': 22.46},
         ]
         for item in right_sq_pyramid_volume_test_values:
-            self.assertEqual(formulas.right_square_pyramid(base_edge=item.get('base_edge'), height=item.get('height')),
+            self.assertEqual(formulas.right_square_pyramid(
+                base_edge=item.get('base_edge'), height=item.get('height')),
                              item.get('expected_value'))
 
     def test_right_square_pyramids_negative(self):
@@ -61,8 +64,11 @@ class FormulaTests(unittest.TestCase):
         ]
         with self.assertRaises(Exception) as context:
             for item in right_sq_pyramid_volume_test_values:
-                formulas.right_square_pyramid(base_edge=item.get('base_edge'), height=item.get('height'))
-                self.assertTrue('Base Edge and/or Height must be greater than 0' in str(context.exception))
+                formulas.right_square_pyramid(base_edge=item.get('base_edge'),
+                                              height=item.get('height'))
+                self.assertTrue(
+                    'Base Edge and/or Height must be greater than 0' in
+                    str(context.exception))
 
     def test_cylinder_volume(self):
         cylinder_volume_test_values = [
@@ -74,7 +80,8 @@ class FormulaTests(unittest.TestCase):
         ]
 
         for item in cylinder_volume_test_values:
-            self.assertEqual(formulas.cylinder_volume(radius=item.get('radius'), height=item.get('height')),
+            self.assertEqual(formulas.cylinder_volume(
+                radius=item.get('radius'), height=item.get('height')),
                              item.get('expected_value'))
 
     def test_cylinder_volume_negative(self):
@@ -86,8 +93,10 @@ class FormulaTests(unittest.TestCase):
         ]
         with self.assertRaises(Exception) as context:
             for item in cylinder_volume_test_values:
-                formulas.cylinder_volume(radius=item.get('radius'), height=item.get('height'))
-                self.assertTrue('Radius and/or Height must be greater than 0' in str(context.exception))
+                formulas.cylinder_volume(radius=item.get('radius'),
+                                         height=item.get('height'))
+                self.assertTrue('Radius and/or Height must be greater than 0'
+                                in str(context.exception))
 
     def test_dodecahedron_volume(self):
         dodecahedron_test_values = [
@@ -97,11 +106,13 @@ class FormulaTests(unittest.TestCase):
             {'side': 7.659, 'expected_value': 3442.88}
         ]
         for item in dodecahedron_test_values:
-            self.assertEqual(formulas.dodecahedron_volume(item.get('side')), item.get('expected_value'))
+            self.assertEqual(formulas.dodecahedron_volume(item.get('side')),
+                             item.get('expected_value'))
 
     def test_dodecahedron_volume_negative(self):
         dodecahedron_test_values = [0, -.25, -1, -3.25]
         with self.assertRaises(Exception) as context:
             for item in dodecahedron_test_values:
                 formulas.dodecahedron_volume(item)
-                self.assertTrue('Side length much be greater than 0' in str(context.exception))
+                self.assertTrue('Side length much be greater than 0' in
+                                str(context.exception))
