@@ -1,4 +1,4 @@
-"""Find Palindromes"""
+"""Find word_games"""
 
 import load_dictionary
 
