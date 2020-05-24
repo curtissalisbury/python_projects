@@ -1,2 +1,2 @@
 # python_projects
-Working through "Python Programming for the Absolute Beginner, Third Edition" as well as CheckiO projects
+Some python projects as I work through resources to help me get better at Python
