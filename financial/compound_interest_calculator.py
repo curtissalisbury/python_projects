@@ -31,6 +31,7 @@ def create_array(p, r, t):
         years.append(time)
     return values, years
 
+
 values, years = create_array(100, .02, 25)
 plt.plot(years, values, 'r')
 values, years = create_array(100, .07, 25)
