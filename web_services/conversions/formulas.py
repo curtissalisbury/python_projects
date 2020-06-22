@@ -27,3 +27,17 @@ def miles_to_kilometers(miles: float):
 
     kilometers = miles * 1.609344
     return round(kilometers, 2)
+
+
+def grams_to_ounces(grams: float):
+    """
+    Convert grams into ounces
+    :param grams: number of grams to convert
+    :return: converted ounces
+    """
+    if grams <= 0:
+        return ValueError
+
+    ounces = grams * 0.035274
+    return round(ounces, 2)
+

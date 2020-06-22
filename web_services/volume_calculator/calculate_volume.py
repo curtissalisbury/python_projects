@@ -35,7 +35,11 @@ def internal_server_error(error):
     return str(json.dumps({"message": Exception})), 500
 
 
+@app.errorhandler(404)
+def not_found_error(error):
+    return str(json.dumps({"message": "Enter a shape and measurements"})), 404
+
+
 if __name__ == "__main__":
     app.run(debug=False)
 
-# TODO - Add error handling that is displayed to the user

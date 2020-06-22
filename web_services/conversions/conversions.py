@@ -14,12 +14,15 @@ def conversion(unit: None):
 
 @app.route("/v1/miles/<float:miles>")
 @app.route("/v1/kilometers/<float:kilometers>")
-def convert(miles=None, kilometers=None):
+@app.route("/v1/grams/<float:grams>")
+def convert(miles=None, kilometers=None, grams=None):
     unit = None
     if miles:
         unit = formulas.miles_to_kilometers(miles)
     elif kilometers:
         unit = formulas.kilometers_to_miles(kilometers)
+    elif grams:
+        unit = formulas.grams_to_ounces(grams)
 
     return conversion(unit=unit)
 
@@ -29,7 +32,11 @@ def internal_server_error(error):
     return str(json.dumps({"message": Exception})), 500
 
 
+@app.errorhandler(404)
+def not_found_error(error):
+    return str(json.dumps({"message": 'Try entering a decimal'})), 404
+
+
 if __name__ == "__main__":
     app.run(debug=False)
 
-# TODO - Add error handling that is displayed to the user
