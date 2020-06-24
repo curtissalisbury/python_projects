@@ -1,3 +1,6 @@
-bacon = [3.14, 'cat', 11, 'cat', True]
-bacon.remove('cat')
-print(bacon)
+words = 'His e-mail is q-lar@freecodecamp.org'
+pieces = words.split()
+print(pieces)
+parts = pieces[3].split('-')
+print(parts)
+# n = parts[1]
