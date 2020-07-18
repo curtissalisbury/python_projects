@@ -63,3 +63,23 @@ class FormulaTests(unittest.TestCase):
             except ValueError as e:
                 if isinstance(e, item.get('expected_value')):
                     pass
+
+    def test_ounces_to_grams(self):
+        ounces_test_values = [
+            {'value': 3, 'expected_value': 85.05},
+            {'value': 3.0, 'expected_value': 85.05},
+            {'value': 3.5, 'expected_value': 99.23},
+            {'value': 2375, 'expected_value': 67331.25},
+            {'value': 22.698, 'expected_value': 643.49},
+            {'value': 0.0, 'expected_value': ValueError},
+            {'value': -10.5, 'expected_value': ValueError}
+        ]
+
+        for item in ounces_test_values:
+            try:
+                self.assertEqual(
+                    formulas.ounces_to_grams(ounces=item.get('value')),
+                    item.get('expected_value'))
+            except ValueError as e:
+                if isinstance(e, item.get('expected_value')):
+                    pass

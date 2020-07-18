@@ -15,7 +15,8 @@ def conversion(unit: None):
 @app.route("/v1/miles/<float:miles>")
 @app.route("/v1/kilometers/<float:kilometers>")
 @app.route("/v1/grams/<float:grams>")
-def convert(miles=None, kilometers=None, grams=None):
+@app.route("/v1/ounces/<float:ounces>")
+def convert(miles=None, kilometers=None, grams=None, ounces=None):
     unit = None
     if miles:
         unit = formulas.miles_to_kilometers(miles)
@@ -23,6 +24,8 @@ def convert(miles=None, kilometers=None, grams=None):
         unit = formulas.kilometers_to_miles(kilometers)
     elif grams:
         unit = formulas.grams_to_ounces(grams)
+    elif ounces:
+        unit = formulas.ounces_to_grams(ounces)
 
     return conversion(unit=unit)
 

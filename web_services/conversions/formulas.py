@@ -41,3 +41,15 @@ def grams_to_ounces(grams: float):
     ounces = grams * 0.035274
     return round(ounces, 2)
 
+
+def ounces_to_grams(ounces: float):
+    """
+    Convert ounces into grams
+    :param ounces: number of ounces to convert
+    :return: converted grams
+    """
+    if ounces <= 0:
+        return ValueError
+
+    grams = ounces * 28.35
+    return round(grams, 2)
